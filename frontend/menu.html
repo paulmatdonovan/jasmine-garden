@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Our Menu</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://js.stripe.com/v3/"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img
+                        class="banner-img"
+                        src="./images/Logo.jpg"
+                        alt="jasmine flower"
+                    />
+                    <h1>Jasmine Garden</h1>
+                </div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h2>Our Menu</h2>
+                <p>
+                    Please note that not all menu items are available for online
+                    orders. Please visit our restaurant for the full selection.
+                </p>
+                <div class="menu-container" id="menu-container">
+                    <!-- menu items will be loaded here -->
+                </div>
+                <div class="order-summary">
+                    <h3>Your Order</h3>
+                    <div class="order-items" id="order-items"></div>
+                    <div class="order-total" id="order-total">Total: $0.00</div>
+                    <button id="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </main>
+        <script src="js/menu.js"></script>
+    </body>
+</html>
