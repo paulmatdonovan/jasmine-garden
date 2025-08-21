@@ -60,7 +60,14 @@ h1 {
     margin: 0;
     font-size: 1.8rem;
 }
-
+h1 span {
+    color: var(--light-blue);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.8rem;
+    font-style: italic;
+}
 nav ul {
     display: flex;
     gap: 2rem;
@@ -281,4 +288,38 @@ h3 {
     .banner-img {
         height: 3em;
     }
+}
+
+.gallery-item img {
+    height: 8rem;
+    width: auto;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/pexels-o-darny-17746130.jpg") center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero-content h2 {
+    font-size: 2em;
+    color: white;
+}
+.hero-content p {
+    font-size: 2em;
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 1rem 2rem;
+    /* no comma between these two */
+}
+.food-gallery {
+}
+.gallery-grid {
 }
