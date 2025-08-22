@@ -9,7 +9,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //Middleware
-app.use(cors());
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5000", // Local development
+            "https://jasmine-garden-nhill.vercel.app/", // Your Vercel URL
+        ],
+        credentials: true,
+    })
+);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../frontend"))); // Serve static files from frontend
 app.use("/css", express.static(path.join(__dirname, "../frontend/css")));
@@ -94,8 +102,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
             payment_method_types: ["card"],
             line_items: lineItems,
             mode: "payment",
-            success_url: `${process.env.FRONTEND_URL}/success.html`,
-            cancel_url: `${process.env.FRONTEND_URL}/cancel.html`,
+            success_url: `https://jasmine-garden-nhill.vercel.app//success.html`,
+            cancel_url: `https://jasmine-garden-nhill.vercel.app//cancel.html`,
         });
         res.json({ id: session.id });
     } catch (err) {

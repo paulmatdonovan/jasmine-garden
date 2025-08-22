@@ -1,0 +1,19 @@
+{
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/index.html" },
+        { "source": "/menu", "destination": "/menu.html" },
+        { "source": "/success", "destination": "/success.html" },
+        { "source": "/cancel", "destination": "/cancel.html" }
+    ],
+    "env": {
+        "BASIC_AUTH_USER": "@basic_auth_user",
+        "BASIC_AUTH_PASSWORD": "@basic_auth_password"
+    },
+    "functions": {
+        "*.html": {
+            "headers": {
+                "x-vercel-protection-bypass": "never"
+            }
+        }
+    }
+}

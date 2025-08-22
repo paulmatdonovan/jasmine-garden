@@ -1,3 +1,5 @@
+const API_BASE = "https://jasmine-garden-nhill.onrender.com";
+
 document.addEventListener("DOMContentLoaded", async () => {
     const stripe = Stripe(
         "pk_test_51RqkZQIbC0QJ3rbtZZhTqbq4iCUQjjW9pg6W9wHe2JdVGs7n4loN1BUmsnOuX65URHx6XkJ7E1Uo5met7FDOl0Iq00Fx1IRu0m"
@@ -12,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Load menu items
     try {
-        const response = await fetch("/api/menu");
+        const response = await fetch(`${API_BASE}/api/menu`);
         const menuItems = await response.json();
 
         menuItems.forEach((item) => {
@@ -111,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // 2. Create checkout session
             const response = await fetch(
-                "http://localhost:5000/api/create-checkout-session",
+                `${API_BASE}/api/create-checkout-session`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
